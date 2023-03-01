@@ -11,22 +11,13 @@ export interface card {
 }
 
 export default function Card(props: card) {
-  const item = {
-    hoverImg: props.hoverImg,
-    src: props.src,
-    category: props.category,
-    size: props.size,
-    description: props.description,
-    rating: props.rating,
-  } as card;
-
   function mouseHover(e: React.SyntheticEvent<HTMLImageElement, Event>) {
     (e.target as HTMLImageElement).src = props.hoverImg;
   }
+
   function mouseLeave(e: React.SyntheticEvent<HTMLImageElement, Event>) {
     (e.target as HTMLImageElement).src = props.src;
   }
-  
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
