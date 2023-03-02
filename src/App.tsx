@@ -3,6 +3,7 @@ import Card from "./Card";
 import Data from "./Data";
 import card from "./Card";
 import TemporaryDrawer from "./expense";
+import { FitScreen } from "@mui/icons-material";
 
 export default function App() {
   const card = Data.map((value) => {
@@ -14,6 +15,7 @@ export default function App() {
         category={value.category}
         rating={value.rating}
         size={value.size}
+        price={value.price}
       />
     );
   });
@@ -32,6 +34,7 @@ export default function App() {
               size={filteredPerson.size}
               description={filteredPerson.description}
               rating={filteredPerson.rating}
+              price={filteredPerson.price}
             />
           );
         })
@@ -50,6 +53,7 @@ export default function App() {
               size={filteredPerson.size}
               description={filteredPerson.description}
               rating={filteredPerson.rating}
+              price={filteredPerson.price}
             />
           );
         })
@@ -68,6 +72,7 @@ export default function App() {
               size={filteredPerson.size}
               description={filteredPerson.description}
               rating={filteredPerson.rating}
+              price={filteredPerson.price}
             />
           );
         })
@@ -87,6 +92,7 @@ export default function App() {
               size={filteredPerson.size}
               description={filteredPerson.description}
               rating={filteredPerson.rating}
+              price={filteredPerson.price}
             />
           );
         })
@@ -105,6 +111,7 @@ export default function App() {
             category={value.category}
             rating={value.rating}
             size={value.size}
+            price={value.price}
           />
         );
       })

@@ -8,6 +8,7 @@ export interface card {
   size: string;
   description: string;
   rating: string;
+  price: string;
 }
 
 export default function Card(props: card) {
@@ -43,6 +44,7 @@ export default function Card(props: card) {
           </button>
           <button className="btn btn-primary">Add to Cart</button>
         </div>
+        <h2>{props.price}</h2>
       </div>
     </div>
   );
