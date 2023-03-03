@@ -1,5 +1,6 @@
 import React, { MouseEvent } from "react";
 import icon from "./icon.png";
+import { createElement } from "react";
 
 export interface card {
   hoverImg: string;
@@ -19,6 +20,8 @@ export default function Card(props: card) {
   function mouseLeave(e: React.SyntheticEvent<HTMLImageElement, Event>) {
     (e.target as HTMLImageElement).src = props.src;
   }
+
+  
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
