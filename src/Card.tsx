@@ -1,6 +1,5 @@
 import React, { MouseEvent } from "react";
 import icon from "./icon.png";
-import { createElement } from "react";
 
 export interface card {
   hoverImg: string;
@@ -10,6 +9,7 @@ export interface card {
   description: string;
   rating: string;
   price: string;
+  parentCallback: any;
 }
 
 export default function Card(props: card) {
@@ -21,7 +21,10 @@ export default function Card(props: card) {
     (e.target as HTMLImageElement).src = props.src;
   }
 
-  
+  function handleClick() {
+    console.log("clicked");
+    props.parentCallback(props.price);
+  }
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -45,9 +48,11 @@ export default function Card(props: card) {
             <img src={icon} alt="" className="h-5" />
             {props.rating}
           </button>
-          <button className="btn btn-primary">Add to Cart</button>
+          <button className="btn btn-primary" onClick={handleClick}>
+            Add to Cart
+          </button>
         </div>
-        <h2>{props.price}</h2>
+        <h2 className="text-xl font-bold"> Price: &#x20b9; {props.price}</h2>
       </div>
     </div>
   );
